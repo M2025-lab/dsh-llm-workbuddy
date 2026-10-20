@@ -1,0 +1,72 @@
+{
+  "name": "@mirror/dsh-llm-workbuddy",
+  "version": "0.1.0",
+  "description": "把 WorkBuddy / CodeBuddy 模型接入 DeepSeek Harness，支持 API Key 与 WorkBuddy 账号令牌两种登录方式",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "workbuddy",
+    "codebuddy",
+    "llm",
+    "provider"
+  ],
+  "author": "mirror",
+  "license": "MIT",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./adapter": "./adapter.js",
+    "./auth": "./auth.js",
+    "./discovery": "./discovery.js",
+    "./protocol": "./protocol.js",
+    "./stream": "./stream.js",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "dsh-workbuddy-login": "cli.js"
+  },
+  "files": [
+    "index.js",
+    "adapter.js",
+    "auth.js",
+    "discovery.js",
+    "protocol.js",
+    "stream.js",
+    "cli.js",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test test/adapter.test.mjs",
+    "test:live": "node cli.js test"
+  },
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.1.2-alpha.2 <0.3.0-0"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "*",
+    "@deepseek-ai/dsh-llm": "*",
+    "@deepseek-ai/schemastery": "*"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/cordis": {
+      "optional": true
+    },
+    "@deepseek-ai/schemastery": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "dependencies": {
+    "yaml": "^2.9.1"
+  }
+}

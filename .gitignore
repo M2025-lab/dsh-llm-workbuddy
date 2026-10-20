@@ -1,0 +1,26 @@
+# 依赖与构建产物
+node_modules/
+dist/
+lib/
+
+# 运行时凭据（绝不入库）
+workbuddy-credential.json
+workbuddy-models.json
+.credentials.yaml
+*.token
+.env
+.env.*
+
+# 系统与编辑器
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# 日志
+*.log
+npm-debug.log*
+
+# 本地备份
+*.bak
+*.bak-*

@@ -1,0 +1,14 @@
+# 把本插件插进 dsh 的加载层。
+#
+# `insert` 表示在已有插件之后追加一个条目；id 是这个条目在 loader 里的
+# 唯一名字，name 是包名（由 profile 的 node_modules 解析）。
+#
+# 注意：loader entry id 必须全局唯一。@axiaohungry/dsh-llm-workbuddy 已经
+# 占用了 `llm-workbuddy`，这里用带后缀的 id，否则 dsh 启动会因 duplicate
+# loader entry id 直接拒绝组装 profile。
+#
+# 这里不动 llm-pi-ai：本插件自带适配器，不抢占它的路由，两个 provider
+# 各用各的 id，互不影响。
+- insert:
+    - id: llm-workbuddy-mirror
+      name: '@mirror/dsh-llm-workbuddy'
