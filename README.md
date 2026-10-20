@@ -18,7 +18,7 @@
 ```sh
 # 1) 装进 dsh 的 desktop profile
 cd ~/.dsh/profiles/desktop
-pnpm add git+https://github.com/liutengda003/dsh-llm-workbuddy.git
+pnpm add git+https://github.com/M2025-lab/dsh-llm-workbuddy.git
 
 # 本地开发时改用 file:（改代码即时生效）
 # pnpm add file:/path/to/dsh-llm-workbuddy
