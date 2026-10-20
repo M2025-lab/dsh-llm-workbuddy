@@ -13,6 +13,14 @@
   ],
   "author": "mirror",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liutengda003/dsh-llm-workbuddy.git"
+  },
+  "homepage": "https://github.com/liutengda003/dsh-llm-workbuddy#readme",
+  "bugs": {
+    "url": "https://github.com/liutengda003/dsh-llm-workbuddy/issues"
+  },
   "type": "module",
   "main": "index.js",
   "exports": {
@@ -36,6 +44,7 @@
     "stream.js",
     "cli.js",
     "cordis.patch.yml",
+    "LICENSE",
     "README.md"
   ],
   "scripts": {

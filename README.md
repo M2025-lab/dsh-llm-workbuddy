@@ -18,13 +18,21 @@
 ```sh
 # 1) 装进 dsh 的 desktop profile
 cd ~/.dsh/profiles/desktop
-pnpm add file:/Users/mirror/projects/dsh-llm-workbuddy
+pnpm add git+https://github.com/liutengda003/dsh-llm-workbuddy.git
+
+# 本地开发时改用 file:（改代码即时生效）
+# pnpm add file:/path/to/dsh-llm-workbuddy
 
 # 2) 在 profile 的 package.json 里注册 bundle
 #    "dsh": { "profile": { "bundles": [ ..., "@mirror/dsh-llm-workbuddy" ] } }
 
 # 3) 重启 dsh
 ```
+
+> ⚠️ loader entry id 必须全局唯一。如果你的 profile 里已经装了别的 WorkBuddy
+> provider 插件（例如 `@axiaohungry/dsh-llm-workbuddy`），它可能已经占用了
+> `llm-workbuddy` 这个 id，这时 dsh 会因 `duplicate loader entry id` 拒绝启动。
+> 本插件的 `cordis.patch.yml` 用 `llm-workbuddy-mirror` 避开了这个冲突。
 
 ## 用法
 
